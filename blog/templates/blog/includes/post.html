@@ -1,0 +1,20 @@
+
+<li>
+  <article class="post">
+    <a href="{% url "post-detail-page" post.slug %}">
+      {% comment %} <img src="{{ post.image.url }}" alt="{{ post.title }}"/> {% endcomment %}
+
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="Post Image">
+    {% else %}
+      <p>No image uploaded.</p>
+    {% endif %}
+      <div class="post__content">
+        <h3>{{ post.title }}</h3>
+        <p>
+          {{ post.excerpt }}
+        </p>
+      </div>
+    </a>
+  </article>
+</li>
